@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CameraActivity</string>
+    <string name="turn_on_off_cam_format">%s %s %s %s %s</string>
+</resources>
