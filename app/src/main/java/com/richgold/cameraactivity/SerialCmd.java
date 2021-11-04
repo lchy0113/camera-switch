@@ -1,4 +1,4 @@
-package com.wallpad.cameraactivity;
+package com.richgold.cameraactivity;
 
 public class SerialCmd {
     public static final int CMD_CALL_ON = 0x01;

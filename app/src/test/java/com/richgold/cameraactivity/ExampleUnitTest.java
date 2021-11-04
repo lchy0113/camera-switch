@@ -1,4 +1,4 @@
-package com.wallpad.cameraactivity;
+package com.richgold.cameraactivity;
 
 import org.junit.Test;
 

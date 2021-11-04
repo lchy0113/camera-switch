@@ -1,16 +1,12 @@
-package com.wallpad.cameraactivity;
+package com.richgold.cameraactivity;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.ComponentName;
 //import android.content.Context;
 //import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
