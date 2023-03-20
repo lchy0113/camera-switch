@@ -34,18 +34,34 @@ public class CameraActivity extends Activity {
             Log.d(TAG, "#surfaceCreated() - ");
             try {
                 Log.d(TAG, "#surfaceCreated() - " + "Camera.getNumberOfCameras : " + Camera.getNumberOfCameras());
-                Log.d(TAG, "#surfaceCreated() - " + "Camera.open(" + mCameraFacing + ")");
                 mCamera = Camera.open(mCameraFacing);
+                /**
+                 * support mCameraFacing value :
+                 * 0 : back camera
+                 * 1 : front camera
+                 * 2 : tp2860 external cctv type.
+                 */
                 if (mCamera != null) {
-
                     Log.d(TAG, "mCamera : " + mCamera);
-
                     Camera.Parameters parameters = mCamera.getParameters();
                     //parameters.setPreviewSize(mSurfaceView.getWidth(), mSurfaceView.getHeight());
                     List<Camera.Size> previewSizes = parameters.getSupportedPreviewSizes();
                     // You need to choose the most appropriate previewSize for your app
                     Camera.Size previewSize = previewSizes.get(0);
                     parameters.setPreviewSize(previewSize.width, previewSize.height);
+                    //parameters.set("sensor-type", "tvi-720p");
+                    parameters.set("sensor-type", "pal");
+                    /**
+                     * support sensor type :
+                     * tvi-720p
+                     * tvi-1080p
+                     * ahd-720p
+                     * ahd-1080p
+                     * cvi-720p
+                     * cvi-1080p
+                     * ntsc
+                     * pal
+                     */
                     mCamera.setParameters(parameters);
                     mCamera.setPreviewDisplay(mHolder);
                     mCamera.startPreview();
@@ -88,7 +104,7 @@ public class CameraActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        mCameraFacing = FRONT_CAMERA_ID;
+        mCameraFacing = BACK_CAMERA_ID;
         init();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "#onCreate() - request permission");
