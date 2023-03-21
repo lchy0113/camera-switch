@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.wallpad.cameraactivity", appContext.getPackageName());
+        assertEquals("com.richgold.cameraactivity", appContext.getPackageName());
     }
 }
